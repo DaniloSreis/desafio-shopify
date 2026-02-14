@@ -2,8 +2,12 @@
   "sections": {
     "Header": {
       "type": "header",
-      "settings": {} 
+      "settings": {}
+    },
+    "Hero": {
+      "type": "hero",
+      "settings": {}
     }
   },
-  "order": ["header"]
+  "order": ["Header", "Hero"]
 }

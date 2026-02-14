@@ -1,0 +1,36 @@
+{% assign best_seller = all_products['locao-principal'] %}
+
+<section class="hero">
+  <div class="hero__content container">
+    <div class="hero__product">
+      <span class="hero_eyebrow">O despertar da sua pele</span>
+      <h2 class="hero__title">{{section.settings.product_title}}</h2>
+      <p class="hero__description">
+        Desenvolvida com óleos botânicos prensados a frio, a loção Sève penetra nas camadas mais profundas para
+        restaurar o brilho e a elasticidade que o tempo e a rotina levam embora.
+      </p>
+      <a href="./" class="hero__button">Comprar</a>
+    </div>
+    <img src="{{best_seller.featured_image |  image_url: width: 400 }}" alt="" class="hero__image">
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Título do Hero",
+      "default": "Hidratação Profunda com a Essência Pura da Natureza."
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,26 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+
+<header class="header">
+  <div class="header__content container">
+    <h1 class="header__title">Lúmina Care</h1>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item"><a href="" class="header__link">Produtos</a></li>
+        <li class="header__item"><a href="" class="header__link">Carinho</a></li>
+        <li class="header__item"><a href="" class="header__link">Conta</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}
