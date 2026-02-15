@@ -5,9 +5,11 @@
     <h1 class="header__title">{{ section.settings.header_title }}</h1>
     <nav class="header__nav">
       <ul class="header__list">
-        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Produtos" }}</a></li>
-        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Carrinho" }}</a></li>
-        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Conta" }}</a></li>
+        {% for block in section.blocks %}
+          <li class="header__item">
+            <a href="{{block.settings.link_url}}" class="header__link">{{ block.settings.link_text }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
   </div>
@@ -38,7 +40,8 @@
         {
           "type": "url",
           "id": "link_url",
-          "label": "Destino do Link"
+          "label": "Destino do Link",
+          "default": "/"
         }
       ]
     }
@@ -49,15 +52,24 @@
       "blocks": [
         {
           "type": "link",
-          "settings": { "link_text": "Produtos" }
+          "settings": {
+            "link_text": "Produtos",
+            "link_url": "/"
+          }
         },
         {
           "type": "link",
-          "settings": { "link_text": "Carrinho" }
+          "settings": {
+            "link_text": "Carrinho",
+            "link_url": "/"
+          }
         },
         {
           "type": "link",
-          "settings": { "link_text": "Conta" }
+          "settings": {
+            "link_text": "Conta",
+            "link_url": "/"
+          }
         }
       ]
     }
