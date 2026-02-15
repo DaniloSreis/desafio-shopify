@@ -7,7 +7,11 @@
     "Hero": {
       "type": "hero",
       "settings": {}
+    },
+    "Products": {
+      "type": "products-list",
+      "settings": {}
     }
   },
-  "order": ["Header", "Hero"]
+  "order": ["Header", "Hero", "Products"]
 }

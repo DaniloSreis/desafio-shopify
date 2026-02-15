@@ -1,0 +1,40 @@
+<section class="products container">
+  <div class="products__content">
+    <h2 class="products__title">{{ section.settings.section_title }}</h2>
+    <div class="products__list">
+      {% for product in collections["locoes"].products %}
+        <article class="product">
+          <img src="{{product.featured_image |  image_url: width: 350 }}" alt="" class="product__image">
+          <h3 class="product__title">{{product.title}}</h3>
+          <div class="product__description">{{product.description}}</div>
+          <span class="product__price">{{product.price | money}}</span>
+          <ul class="product__tags">
+            {% for tag in product.tags %}
+              <li class="product__tag">{{tag}}</li>
+            {%endfor%}
+          </ul>
+          <button class="product__button">Comprar</button>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lista de Produtos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Título do Produto",
+      "default": "Nossos Produtos"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lista de Produtos"
+    }
+  ]
+}
+{% endschema %}
