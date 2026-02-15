@@ -2,12 +2,12 @@
 
 <header class="header">
   <div class="header__content container">
-    <h1 class="header__title">Lúmina Care</h1>
+    <h1 class="header__title">{{ section.settings.header_title }}</h1>
     <nav class="header__nav">
       <ul class="header__list">
-        <li class="header__item"><a href="" class="header__link">Produtos</a></li>
-        <li class="header__item"><a href="" class="header__link">Carinho</a></li>
-        <li class="header__item"><a href="" class="header__link">Conta</a></li>
+        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Produtos" }}</a></li>
+        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Carrinho" }}</a></li>
+        <li class="header__item"><a href="" class="header__link">{{block.settings.label |  default: "Conta" }}</a></li>
       </ul>
     </nav>
   </div>
@@ -16,10 +16,50 @@
 {% schema %}
 {
   "name": "Header",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Nome da Empresa",
+      "default": "Lúmina Care"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link do Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Texto do Link",
+          "default": "Produtos"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Destino do Link"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Header"
+      "name": "Header",
+      "blocks": [
+        {
+          "type": "link",
+          "settings": { "link_text": "Produtos" }
+        },
+        {
+          "type": "link",
+          "settings": { "link_text": "Carrinho" }
+        },
+        {
+          "type": "link",
+          "settings": { "link_text": "Conta" }
+        }
+      ]
     }
   ]
 }
