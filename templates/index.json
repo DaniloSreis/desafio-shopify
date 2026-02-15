@@ -22,7 +22,7 @@
     "Products": {
       "type": "products-list",
       "settings": {
-        "section_title": "New Products"
+        "section_title": "Olá mundo"
       }
     }
   },
