@@ -1,19 +1,21 @@
 <section class="products container">
   <div class="products__content">
     <h2 class="products__title">{{ section.settings.section_title }}</h2>
-    {% for product in collections["locoes"].products %}
-      <article class="product">
-        <h3 class="product__title">{{product.title}}</h3>
-        <div class="product__description">{{product.description}}</div>
-        <span class="product__price">{{product.price | money}}</span>
-        <ul class="product__tags">
-          {% for tag in product.tags %}
-            <li class="product__tag">{{tag}}</li>
-          {%endfor%}
-        </ul>
-        <button class="product__button">Comprar</button>
-      </article>
-    {% endfor %}
+    <div class="products__list">
+      {% for product in collections["locoes"].products %}
+        <article class="product">
+          <h3 class="product__title">{{product.title}}</h3>
+          <div class="product__description">{{product.description}}</div>
+          <span class="product__price">{{product.price | money}}</span>
+          <ul class="product__tags">
+            {% for tag in product.tags %}
+              <li class="product__tag">{{tag}}</li>
+            {%endfor%}
+          </ul>
+          <button class="product__button">Comprar</button>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
