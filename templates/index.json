@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "Header": {
@@ -6,12 +15,20 @@
     },
     "Hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "product_title": "Hidratação Profunda com a Essência Pura da Natureza."
+      }
     },
     "Products": {
       "type": "products-list",
-      "settings": {}
+      "settings": {
+        "section_title": "New Products"
+      }
     }
   },
-  "order": ["Header", "Hero", "Products"]
+  "order": [
+    "Header",
+    "Hero",
+    "Products"
+  ]
 }
