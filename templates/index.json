@@ -9,9 +9,40 @@
  */
 {
   "sections": {
-    "Header": {
+    "header_e4WRGQ": {
       "type": "header",
-      "settings": {}
+      "blocks": {
+        "link_7RQyUx": {
+          "type": "link",
+          "settings": {
+            "link_text": "Produtos",
+            "link_url": "/"
+          }
+        },
+        "link_YhYjbY": {
+          "type": "link",
+          "settings": {
+            "link_text": "Carrinho",
+            "link_url": "/"
+          }
+        },
+        "link_xhpWRY": {
+          "type": "link",
+          "settings": {
+            "link_text": "Conta",
+            "link_url": "/"
+          }
+        }
+      },
+      "block_order": [
+        "link_7RQyUx",
+        "link_YhYjbY",
+        "link_xhpWRY"
+      ],
+      "name": "Header",
+      "settings": {
+        "header_title": "Lúmina Care"
+      }
     },
     "Hero": {
       "type": "hero",
@@ -27,7 +58,7 @@
     }
   },
   "order": [
-    "Header",
+    "header_e4WRGQ",
     "Hero",
     "Products"
   ]
