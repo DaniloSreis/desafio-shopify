@@ -55,11 +55,15 @@
       "settings": {
         "section_title": "Novos Produtos"
       }
+    },
+    "Footer": {
+      "type": "footer"
     }
   },
   "order": [
     "header_e4WRGQ",
     "Hero",
-    "Products"
+    "Products",
+    "Footer"
   ]
 }
