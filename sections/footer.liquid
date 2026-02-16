@@ -1,0 +1,146 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+  <div class="footer__content container">
+    <div class="footer__branding">
+      <h2 class="footer__title">{{ section.settings.footer_title }}</h2>
+      <span class="footer_phrase">{{ section.settings.footer_phrase }}</span>
+    </div>
+    <nav class="footer__navigation" aria-label="Navegação secundária">
+      <ul class="footer__list">
+          {% for block in section.blocks %}
+            {% if block.type == 'navigation_link' %}
+              <li class="footer__item" {{ block.shopify_attributes }}>
+                <a href="{{block.settings.link_url}}" class="footer__link">{{ block.settings.link_text }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+      </ul>
+    </nav>
+    <div class="footer__support">
+      <ul class="footer__list">
+          {% for block in section.blocks %}
+            {% if block.type == 'support_link' %}
+              <li class="footer__item" {{ block.shopify_attributes }}>
+                <a href="{{block.settings.link_url}}" class="footer__link">{{ block.settings.link_text }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "footer_title",
+      "label": "Título do Footer",
+      "default": "Lúmina Care"
+    },
+    {
+      "type": "text",
+      "id": "footer_phrase",
+      "label": "Frase",
+      "default": "O toque que sua pele merece, o brilho que você sente."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "navigation_link",
+      "name": "Link de Navegação",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Texto do Link",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Destino do Link",
+          "default": "/"
+        }
+      ]
+    },
+    {
+      "type": "support_link",
+      "name": "Link de Suporte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Texto do Link",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Destino do Link",
+          "default": "/"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        {
+          "type": "navigation_link",
+          "settings": {
+            "link_text": "Início",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "navigation_link",
+          "settings": {
+            "link_text": "Novas Loções",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "navigation_link",
+          "settings": {
+            "link_text": "Loção Principal",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "support_link",
+          "settings": {
+            "link_text": "Políticas de Envio",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "support_link",
+          "settings": {
+            "link_text": "Devoluções e Trocas",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "support_link",
+          "settings": {
+            "link_text": "Termos de Uso",
+            "link_url": "/"
+          }
+        },
+        {
+          "type": "support_link",
+          "settings": {
+            "link_text": "Fale Conosco",
+            "link_url": "/"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

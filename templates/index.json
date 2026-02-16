@@ -55,6 +55,9 @@
       "settings": {
         "section_title": "Novos Produtos"
       }
+    },
+    "Footer": {
+      "type": "footer"
     }
   },
   "order": [
